@@ -3,5 +3,31 @@
     "setup": "npm init && npm i -D webpack webpack-cli css-loader style-loader html-loader html-webpack-plugin webpack-dev-server babel-loader @babel/core @babel/preset-env && npm init @eslint/config@latest && npm i --save-dev --save-exact prettier",
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack serve --config webpack.dev.js"
+  },
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "A dummy weather app.",
+  "main": "src/index.js",
+  "keywords": [
+    "weather",
+    "weather-app",
+    "dummy-weather-app"
+  ],
+  "author": "TEKKSUNN <emmanuelleutecson@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.11.1",
+    "globals": "^15.9.0",
+    "html-loader": "^5.1.0",
+    "html-webpack-plugin": "^5.6.0",
+    "prettier": "3.3.3",
+    "style-loader": "^4.0.0",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0"
   }
 }
