@@ -43,6 +43,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --white-color-1: #ACE2E1;
   --white-color-2: #F7EEDD;
   --pad-1: 12px 24px;
+  --blue-10: #41C9E210;
   --blue-25: #41C9E225;
   --blue-50: #41C9E250;
   --blue-75: #41C9E275;
@@ -58,7 +59,21 @@ p, h1, h2, h3, h4, h5, h6 {
   font-family: 'alieronregular', Arial, Helvetica, sans-serif;
 }
 
+body {
+  height: 100vh;
+  background-image:
+    linear-gradient(transparent, var(--blue-25)),
+    url("../images/background.png");
+  background-repeat: round no-repeat;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas:
+    "header header header"
+    "main main main"
+}
+
 header {
+  grid-area: header;
   background-color: var(--blue-color-1);
   color: var(--white-color-2);
   display: flex;
@@ -111,4 +126,8 @@ header {
 #location-query:focus + #location-search {
   border-color: var(--blue-50);
   text-shadow: var(--text-shadow-1);
+}
+
+main {
+  grid-area: main;
 }
