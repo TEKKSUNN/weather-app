@@ -44,6 +44,10 @@ p, h1, h2, h3, h4, h5, h6 {
   --navbar-hover: hsl(195, 100%, 25%);
 }
 
+body > * {
+  padding: 0 var(--horizontal-margin);
+}
+
 * {
   font-family: 'interregular', Arial, Helvetica, sans-serif;
   background-color: transparent;
@@ -59,8 +63,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 var(--horizontal-margin);
   height: 160px;
+  box-shadow: 0 4px 4px #00000025;
 }
 
 .web-icon-title {
@@ -125,6 +129,14 @@ input[type="text"] {
   outline: 0;
   padding: 8px;
   border-radius: 10px;
+}
+
+input:hover {
+  box-shadow: 0 0 2px #00000025;
+}
+
+input:focus {
+  box-shadow: 2px 2px 2px #00000025;
 }
 
 button {
