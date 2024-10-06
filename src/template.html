@@ -14,17 +14,19 @@
         </div>
         <div class="navs">
             <div class="dropdown">
-                <p class="dropdown-text">Depth</p>
-                <img src="./images/dropdown-arrow.png" alt="dropdown arrow icon" class="icon dropdown-icon">
-                <ul class="dropdown-content">
+                <div class="dropdown-content">
+                    <p class="dropdown-text">Depth</p>
+                    <img src="./images/dropdown-arrow.png" alt="dropdown arrow icon" class="icon dropdown-icon">
+                </div>
+                <ul class="dropdown-items">
                     <li class="dropdown-item"><button class="mode">Normal</button></li>
                     <li class="dropdown-item"><button class="mode">Maximum</button></li>
                 </ul>
             </div>
             <div class="search">
-                <form method="get">
+                <form method="post">
                     <input type="text" name="query" id="query">
-                    <img src="./images/search.png" alt="search icon" class="icon search-icon">
+                    <button type="submit"><img src="./images/search.png" alt="search icon" class="icon search-icon"></button>
                 </form>
             </div>
         </div>
