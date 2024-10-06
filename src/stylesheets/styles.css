@@ -36,3 +36,98 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 /* End of CSS Reset */
+
+:root {
+  --navbar-bg: #00BFFF;
+  --horizontal-margin: 120px;
+  --vertical-margin: 40px;
+  --navbar-hover: hsl(195, 100%, 25%);
+}
+
+* {
+  font-family: 'interregular', Arial, Helvetica, sans-serif;
+  background-color: transparent;
+}
+
+input {
+  background-color: white;
+}
+
+header {
+  background-color: var(--navbar-bg);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--horizontal-margin);
+  height: 160px;
+}
+
+.web-icon-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.search {
+  padding: var(--vertical-margin) 0;
+}
+
+#web-title {
+  font: 48px 'concert_oneregular';
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+  align-self: stretch;
+  align-content: center;
+  width: 250px;
+}
+
+.dropdown:hover {
+  background-color: var(--navbar-hover);
+}
+
+.dropdown-items {
+  display: none;
+  position: absolute;
+  bottom: 0px;
+}
+
+.dropdown-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+}
+
+.dropdown-text {
+  font: 30px 'concert_oneregular';
+}
+
+.navs {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  align-self: stretch;
+}
+
+.search form {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+input[type="text"] {
+  border: 0;
+  outline: 0;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+}
