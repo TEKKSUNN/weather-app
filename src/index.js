@@ -2,6 +2,8 @@ import "./stylesheets/styles.css";
 
 import { loadDropDown } from "@tekksunn/drop-down";
 
-document.addEventListener("DOMContentLoaded", () => {
+function main() {
   loadDropDown("div.dropdown-content", "hover");
-});
+}
+
+document.addEventListener("DOMContentLoaded", main);
