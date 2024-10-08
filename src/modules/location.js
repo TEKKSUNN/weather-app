@@ -22,9 +22,7 @@ export async function changeLocation(...location) {
 export async function assignCurrentLocation() {
   processUserLocation(async function (position) {
     let currentLocation = await getCurrentLocation();
-    if (currentLocation) {
-      currentLocation = await JSON.parse(currentLocation);
-    } else {
+    if (!currentLocation) {
       const latitude = position.coords.latitude;
       const longitude = position.coords.longitude;
       currentLocation = [latitude, longitude];
@@ -35,9 +33,15 @@ export async function assignCurrentLocation() {
 
 async function setCurrentLocation(location) {
   if (typeof location === "object") {
-    localStorage.setItem("currentLocation", await JSON.stringify(location));
+    await localStorage.setItem("currentLocation", await JSON.stringify(location));
     await updateLocationStatus();
   }
 }
 
-export const getCurrentLocation = () => localStorage.getItem("currentLocation");
+export async function getCurrentLocation() {
+  const currentLocation = localStorage.getItem("currentLocation");
+  if (currentLocation) {
+    return JSON.parse(currentLocation);
+  }
+  return currentLocation;
+};
