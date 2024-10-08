@@ -1,4 +1,4 @@
-import updateLocationStatus from "./dom/location-status";
+import updateEverything from "./update";
 
 export function processUserLocation(callbackfn) {
   if ("geolocation" in navigator) {
@@ -34,7 +34,7 @@ export async function assignCurrentLocation() {
 async function setCurrentLocation(location) {
   if (typeof location === "object") {
     await localStorage.setItem("currentLocation", await JSON.stringify(location));
-    await updateLocationStatus();
+    updateEverything();
   }
 }
 

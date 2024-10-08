@@ -7,7 +7,7 @@ import { loadDropDown } from "@tekksunn/drop-down";
 
 async function main() {
   loadDropDown("div.dropdown-content", "hover");
-  assignCurrentLocation();
+  await assignCurrentLocation();
   updateLocationStatus();
   assignWeatherData();
 }
