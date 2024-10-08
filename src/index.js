@@ -1,5 +1,6 @@
 import updateLocationStatus from "./modules/dom/location-status";
 import { assignCurrentLocation } from "./modules/location";
+import activateSearchButton from "./modules/search";
 import { assignWeatherData } from "./modules/weather";
 import "./stylesheets/styles.css";
 
@@ -10,6 +11,7 @@ async function main() {
   await assignCurrentLocation();
   updateLocationStatus();
   assignWeatherData();
+  activateSearchButton();
 }
 
 document.addEventListener("DOMContentLoaded", main);
