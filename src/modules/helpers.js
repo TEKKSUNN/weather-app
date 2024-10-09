@@ -3,3 +3,5 @@ export function stopSubmitEvent(HTMLElement) {
 }
 
 export const getWeatherCardsDiv = () => document.getElementById("weather-cards");
+
+export const getModeButtons = () => Array.from(document.querySelectorAll("button.mode"));
