@@ -47,3 +47,7 @@ export function createImage(url, className, altText) {
   }
   return image;
 }
+
+export function convertFareToCelc(farenheit) {
+  return ((parseFloat(farenheit) - 32) * 5)/9;
+}
