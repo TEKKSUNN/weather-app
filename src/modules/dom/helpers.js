@@ -33,3 +33,17 @@ export function createText(type, textContent, className) {
   }
   return text;
 }
+
+export function createImage(url, className, altText) {
+  const image = create("img");
+  if (url) {
+    image.src = url;
+  }
+  if (className) {
+    image.className = className;
+  }
+  if (altText) {
+    image.alt = altText;
+  }
+  return image;
+}
