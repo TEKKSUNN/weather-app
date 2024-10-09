@@ -31,6 +31,7 @@
     "webpack-dev-server": "^5.1.0"
   },
   "dependencies": {
-    "@tekksunn/drop-down": "^2.1.0"
+    "@tekksunn/drop-down": "^2.1.0",
+    "date-fns": "^4.1.0"
   }
 }
