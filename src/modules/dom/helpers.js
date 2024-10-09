@@ -19,3 +19,17 @@ export function createDiv(className) {
   }
   return div;
 }
+
+export function createText(type, textContent, className) {
+  if (!type) {
+    return;
+  }
+  const text = create(type);
+  if (textContent) {
+    text.textContent = textContent;
+  }
+  if (className) {
+    text.className = className;
+  }
+  return text;
+}
