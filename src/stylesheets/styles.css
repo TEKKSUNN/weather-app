@@ -123,7 +123,7 @@ header {
   width: var(--dropdown-width);
   background-color: var(--navbar-hover);
   font: 24px 'concert_oneregular';
-  padding: 10px;
+  display: flex;
 }
 
 .dropdown-items li:not(:last-child) {
@@ -132,6 +132,9 @@ header {
 
 .dropdown-items button {
   color: white;
+  flex: 1;
+  text-align: start;
+  padding: 10px;
 }
 
 .dropdown-items li:hover,
