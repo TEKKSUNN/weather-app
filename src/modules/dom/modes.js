@@ -1,4 +1,4 @@
-import { getModeButtons, onclickOf } from "../helpers";
+import { getModeButtons, onclickOf } from "./helpers";
 import { activateMaximumTab, activateNormalTab } from "./tabs";
 
 export default function assignModeButtonEvents() {

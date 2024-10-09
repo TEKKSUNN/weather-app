@@ -1,4 +1,4 @@
-import { stopSubmitEvent } from "./helpers";
+import { stopSubmitEvent } from "./dom/helpers";
 import { changeLocation } from "./location";
 
 export default function activateSearchButton() {
