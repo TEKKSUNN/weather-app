@@ -51,3 +51,11 @@ export function createImage(url, className, altText) {
 export function convertFareToCelc(farenheit) {
   return ((parseFloat(farenheit) - 32) * 5)/9;
 }
+
+export function appendTo(parentElement, ...childElements) {
+  if (childElements && parentElement) {
+    childElements.forEach((element) => {
+      parentElement.appendChild(element);
+    });
+  }
+}
