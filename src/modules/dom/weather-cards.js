@@ -3,7 +3,7 @@ import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeath
 import createImgFromIcon from "./weather-icons";
 import updateWeatherData from "../weather";
 
-export async function createWeatherCard(day) {
+async function createWeatherCard(day) {
   const container = createDiv("weather-container");
   const dayName = createText("h2", format(day.datetime, "iiii"));
   const card = createDiv("weather-card");
@@ -17,7 +17,7 @@ export async function createWeatherCard(day) {
   return container;
 }
 
-export async function getWeatherCards(amount) {
+async function getWeatherCards(amount) {
   await updateWeatherData();
   const weatherDataDays = await getWeatherData().days;
   const weatherCards = [];
