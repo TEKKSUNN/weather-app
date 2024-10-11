@@ -1,8 +1,8 @@
 import { format } from "date-fns";
-import { appendTo, convertFareToCelc, createDiv, createText } from "./helpers";
+import { appendTo, convertFareToCelc, createDiv, createText, getWeatherData } from "./helpers";
 import createImgFromIcon from "./weather-icons";
 
-export function createWeatherCard(day) {
+export async function createWeatherCard(day) {
   const container = createDiv("weather-container");
   const dayName = createText("h2", format(day.datetime, "iiii"));
   const card = createDiv("weather-card");
@@ -14,4 +14,15 @@ export function createWeatherCard(day) {
   appendTo(card, icon, name, desc, temp, date);
   appendTo(container, dayName, card);
   return container;
+}
+
+export async function getWeatherCards(amount) {
+  const weatherDataDays = await getWeatherData().days;
+  const weatherCards = [];
+  await weatherDataDays.forEach(async(day, index) => {
+    if (index === amount - 1) return;
+    const weatherCard = await createWeatherCard(day);
+    weatherCards.push(weatherCard);
+  });
+  return weatherCards;
 }
