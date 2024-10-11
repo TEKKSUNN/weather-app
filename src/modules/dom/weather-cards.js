@@ -35,3 +35,10 @@ export async function loadNormalCards() {
   clearHTML(weatherCardsContainer);
   appendTo(weatherCardsContainer, ...weatherCards);
 }
+
+export async function loadAllCards() {
+  const weatherCards = await getWeatherCards();
+  const weatherCardsContainer = await getWeatherCardsDiv();
+  clearHTML(weatherCardsContainer);
+  appendTo(weatherCardsContainer, ...weatherCards);
+}
