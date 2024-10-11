@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeatherCardsDiv, getWeatherData } from "./helpers";
 import createImgFromIcon from "./weather-icons";
+import updateWeatherData from "../weather";
 
 export async function createWeatherCard(day) {
   const container = createDiv("weather-container");
@@ -17,10 +18,11 @@ export async function createWeatherCard(day) {
 }
 
 export async function getWeatherCards(amount) {
+  await updateWeatherData();
   const weatherDataDays = await getWeatherData().days;
   const weatherCards = [];
   await weatherDataDays.forEach(async(day, index) => {
-    if (index === amount - 1) return;
+    if (index >= amount) return;
     const weatherCard = await createWeatherCard(day);
     weatherCards.push(weatherCard);
   });
