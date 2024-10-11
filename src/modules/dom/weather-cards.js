@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeatherCardsDiv, getWeatherData } from "./helpers";
 import createImgFromIcon from "./weather-icons";
 import updateWeatherData from "../weather";
+import { getTabFocused } from "./tabs";
 
 async function createWeatherCard(day) {
   const container = createDiv("weather-container");
@@ -41,4 +42,13 @@ export async function loadAllCards() {
   const weatherCardsContainer = await getWeatherCardsDiv();
   clearHTML(weatherCardsContainer);
   appendTo(weatherCardsContainer, ...weatherCards);
+}
+
+export async function updateWeatherCards() {
+  const currentTab = await getTabFocused();
+  if (currentTab === "normal") {
+    loadNormalCards();
+  } else if (currentTab === "maximum") {
+    loadAllCards();
+  }
 }
