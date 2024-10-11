@@ -42,7 +42,9 @@ p, h1, h2, h3, h4, h5, h6 {
   --horizontal-margin: 120px;
   --vertical-margin: 40px;
   --navbar-hover: hsl(195, 100%, 25%);
-  --navbar-focus: hsl(195, 100%, 10%)
+  --navbar-focus: hsl(195, 100%, 10%);
+  --weather-cards-bg: #F08080;
+  --weather-cards-bd: 1px solid #EEE8AA;
 }
 
 body {
@@ -237,9 +239,72 @@ footer .title {
 main {
   padding-top: 5px;
   padding-bottom: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .location-status {
   font: 16px 'interregular';
   text-shadow: 2px 2px 2px #00000025;
+}
+
+#weather-cards {
+  display: grid;
+  grid-template-columns: repeat(5, 210px);
+  grid-template-rows: repeat(auto-fill, minmax(400px, 401px));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-card {
+  background-color: var(--weather-cards-bg);
+  border: var(--weather-cards-bd);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  justify-content: space-between;
+  border-radius: 10px;
+  height: 400px;
+  padding: 20px;
+}
+
+.weather-card:hover {
+  border: 0;
+  box-shadow: 4px 4px 4px #00000025;
+}
+
+.weather-name {
+  font: bold 20px 'interregular';
+  line-height: 1.1;
+  color: #000;
+  text-shadow: 1px 1px 2px #00000025;
+}
+
+.day-name {
+  font: bold 20px 'intersemi_bold';
+  text-shadow: 1px 1px 2px #00000025;
+}
+
+.weather-desc {
+  font: 18px 'intersemi_bold';
+}
+
+.weather-temp {
+  font: 25px 'intersemi_bold';
+  color: #2F4F4F;
+}
+
+.weather-date {
+  font: 16px 'interregular';
 }
