@@ -1,20 +1,19 @@
 import { createImage } from "./helpers";
-
-const rainURL = "./images/rain.png";
-const cloudyURL = "./images/cloudy.png";
-const snowyURL = "./images/snowy.png";
-const sunnyURL = "./images/sunny.png";
+import RainImage from "../../images/rain.png";
+import CloudyImage from "../../images/cloudy.png";
+import SnowyImage from "../../images/snowy.png";
+import SunnyImage from "../../images/sunny.png";
 
 export default function createImgFromIcon(iconName) {
   const createWeatherIcon = (url) => createImage(url, "weather-icon", `${iconName} weather icon`);
   if (iconName === "rain") {
-    return createWeatherIcon(rainURL);
+    return createWeatherIcon(RainImage);
   }
   if (iconName === "cloudy" || iconName === "partially cloudy") {
-    return createWeatherIcon(cloudyURL);
+    return createWeatherIcon(CloudyImage);
   }
   if (iconName === "snowy") {
-    return createWeatherIcon(snowyURL);
+    return createWeatherIcon(SnowyImage);
   }
-  return createWeatherIcon(sunnyURL, iconName);
+  return createWeatherIcon(SunnyImage);
 }
