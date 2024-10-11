@@ -5,7 +5,7 @@ import updateWeatherData from "../weather";
 
 async function createWeatherCard(day) {
   const container = createDiv("weather-container");
-  const dayName = createText("h2", format(day.datetime, "iiii"));
+  const dayName = createText("h2", format(day.datetime, "iiii").toUpperCase());
   const card = createDiv("weather-card");
   const icon = createImgFromIcon(day.icon);
   const name = createText("p", day.conditions, "weather-name");
