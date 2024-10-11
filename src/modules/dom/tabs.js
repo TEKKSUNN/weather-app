@@ -46,3 +46,5 @@ export function assignTabFocused() {
     setTabFocused("normal");
   }
 }
+
+export const getTabFocused = () => localStorage.getItem("tabFocused");
