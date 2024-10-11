@@ -242,11 +242,13 @@ main {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
 
 .location-status {
   font: 16px 'interregular';
   text-shadow: 2px 2px 2px #00000025;
+  align-self: flex-start;
 }
 
 #weather-cards {
