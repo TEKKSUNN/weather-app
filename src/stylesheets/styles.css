@@ -168,7 +168,7 @@ header {
   gap: 20px;
 }
 
-input[type="text"] {
+input#query {
   border: 0;
   outline: 0;
   padding: 8px;
