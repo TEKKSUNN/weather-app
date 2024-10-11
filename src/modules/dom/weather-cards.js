@@ -1,5 +1,5 @@
 import { format } from "date-fns";
-import { appendTo, convertFareToCelc, createDiv, createText, getWeatherData } from "./helpers";
+import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeatherCardsDiv, getWeatherData } from "./helpers";
 import createImgFromIcon from "./weather-icons";
 
 export async function createWeatherCard(day) {
@@ -25,4 +25,11 @@ export async function getWeatherCards(amount) {
     weatherCards.push(weatherCard);
   });
   return weatherCards;
+}
+
+export async function loadNormalCards() {
+  const weatherCards = await getWeatherCards(5);
+  const weatherCardsContainer = await getWeatherCardsDiv();
+  clearHTML(weatherCardsContainer);
+  appendTo(weatherCardsContainer, ...weatherCards);
 }
