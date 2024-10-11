@@ -9,7 +9,7 @@ export default function createImgFromIcon(iconName) {
   if (iconName === "rain") {
     return createWeatherIcon(RainImage);
   }
-  if (iconName === "cloudy" || iconName === "partially cloudy") {
+  if (iconName === "cloudy" || iconName === "partly-cloudy-day") {
     return createWeatherIcon(CloudyImage);
   }
   if (iconName === "snowy") {
