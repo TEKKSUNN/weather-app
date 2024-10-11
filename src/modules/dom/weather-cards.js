@@ -10,7 +10,7 @@ export async function createWeatherCard(day) {
   const icon = createImgFromIcon(day.icon);
   const name = createText("p", day.conditions, "weather-name");
   const desc = createText("p", day.description, "weather-desc");
-  const temp = createText("p", convertFareToCelc(day.temp), "weather-temp");
+  const temp = createText("p", `${(convertFareToCelc(day.temp).toFixed(2))}°C`, "weather-temp");
   const date = createText("p", format(day.datetime, "MM/dd/yyyy"), "weather-date");
   appendTo(card, icon, name, desc, temp, date);
   appendTo(container, dayName, card);
