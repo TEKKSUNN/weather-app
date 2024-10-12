@@ -63,3 +63,11 @@ export function appendTo(parentElement, ...childElements) {
 export const getWeatherData = () => JSON.parse(localStorage.getItem("weatherData"));
 
 export const clearHTML = (HTMLElement) => { HTMLElement.innerHTML = "" };
+
+export function createDialog(className) {
+  const dialog = create("dialog");
+  if (className) {
+    dialog.className = className;
+  }
+  return dialog;
+}
