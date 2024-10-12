@@ -71,3 +71,17 @@ export function createDialog(className) {
   }
   return dialog;
 }
+
+export function createButton(className, textContent, callbackfn) {
+  const button = create("button");
+  if (className) {
+    button.className = className;
+  }
+  if (textContent) {
+    button.textContent = textContent;
+  }
+  if (callbackfn) {
+    onclickOf(button, callbackfn);
+  }
+  return button;
+}
