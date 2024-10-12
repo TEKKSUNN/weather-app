@@ -39,7 +39,7 @@ p, h1, h2, h3, h4, h5, h6 {
 
 :root {
   --navbar-bg: #00BFFF;
-  --horizontal-margin: 120px;
+  --horizontal-margin: 100px;
   --vertical-margin: 40px;
   --navbar-hover: hsl(195, 100%, 25%);
   --navbar-focus: hsl(195, 100%, 10%);
