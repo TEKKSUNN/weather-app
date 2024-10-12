@@ -15,7 +15,7 @@ async function createWeatherCard(day) {
   const temp = createText("p", `${(convertFareToCelc(day.temp).toFixed(2))}°C`, "weather-temp");
   const date = createText("p", format(day.datetime, "MM/dd/yyyy"), "weather-date");
   const dialogContainer = getWeatherCardDialogsContainer();
-  const dialog = getWeatherCardDialog(day.hours);
+  const dialog = getWeatherCardDialog(day.hours, day.datetime);
   onclickOf(card, () => { dialog.showModal() });
   appendTo(dialogContainer, dialog);
   appendTo(card, icon, name, desc, temp, date);
