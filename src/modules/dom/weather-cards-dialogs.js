@@ -20,3 +20,5 @@ export default function getWeatherCardDialog(hoursData) {
   appendTo(weatherCardDialog, container);
   return weatherCardDialog;
 }
+
+export const getWeatherCardDialogsContainer = () => document.getElementById("weather-card-dialogs");
