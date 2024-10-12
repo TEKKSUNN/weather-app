@@ -1,8 +1,9 @@
 import { format } from "date-fns";
-import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeatherCardsDiv, getWeatherData } from "./helpers";
+import { appendTo, clearHTML, convertFareToCelc, createDiv, createText, getWeatherCardsDiv, getWeatherData, onclickOf } from "./helpers";
 import createImgFromIcon from "./weather-icons";
 import updateWeatherData from "../weather";
 import { getTabFocused } from "./tabs";
+import getWeatherCardDialog, { getWeatherCardDialogsContainer } from "./weather-cards-dialogs";
 
 async function createWeatherCard(day) {
   const container = createDiv("weather-container");
@@ -13,6 +14,10 @@ async function createWeatherCard(day) {
   const desc = createText("p", day.description, "weather-desc");
   const temp = createText("p", `${(convertFareToCelc(day.temp).toFixed(2))}°C`, "weather-temp");
   const date = createText("p", format(day.datetime, "MM/dd/yyyy"), "weather-date");
+  const dialogContainer = getWeatherCardDialogsContainer();
+  const dialog = getWeatherCardDialog(day.hours);
+  onclickOf(card, () => { dialog.showModal() });
+  appendTo(dialogContainer, dialog);
   appendTo(card, icon, name, desc, temp, date);
   appendTo(container, dayName, card);
   return container;
