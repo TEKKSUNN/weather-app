@@ -12,7 +12,7 @@ export default function getWeatherCardDialog(hoursData) {
   hoursData.forEach((hour) => {
     const dataContainer = createDiv("hour-data");
     const time = createText("p", hour.datetime, "hour-datetime");
-    const temp = createText("p", `${convertFareToCelc(hour.temp)}°C`, "hour-temp");
+    const temp = createText("p", `${convertFareToCelc(hour.temp).toFixed(2)}°C`, "hour-temp");
     const icon = createImgFromIcon(hour.icon);
     appendTo(dataContainer, time, temp, icon);
     appendTo(container, dataContainer);
