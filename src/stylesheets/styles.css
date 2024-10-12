@@ -310,3 +310,59 @@ main {
 .weather-date {
   font: 16px 'interregular';
 }
+
+dialog.weather-card-dialog {
+  margin: auto;
+  background-color: var(--weather-cards-bg);
+  position: relative;
+  padding: 20px;
+  border-radius: 10px;
+  color: transparent;
+  border: var(--weather-cards-bd);
+  box-shadow: 4px 4px 4px #00000050;
+}
+
+.close-dialog {
+  color: white;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.hour-data {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: 'intersemi_bold';
+  font-weight: 600;
+}
+
+.hour-data:not(:last-child) {
+  border-bottom: 1px solid #EEE8AA;
+}
+
+.hour-data .weather-icon {
+  --size: 30px;
+  height: var(--size);
+  width: var(--size);
+  justify-self: end;
+}
+
+.weather-hours-container {
+  width: 50vw;
+  height: 75vh;
+  color: white;
+  font-family: 'intersemi_bold';
+}
+
+.hour-temp {
+  color: #2F4F4F;
+  font-weight: bold;
+}
+
+.hour-status {
+  color: #000;
+  text-shadow: 1px 1px 2px #00000025;
+}
