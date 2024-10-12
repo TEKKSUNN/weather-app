@@ -9,6 +9,7 @@ async function createWeatherCard(day) {
   const container = createDiv("weather-container");
   const dayName = createText("h2", format(day.datetime, "iiii").toUpperCase(), "day-name");
   const card = createDiv("weather-card");
+  card.setAttribute("tabindex", "0");
   const icon = createImgFromIcon(day.icon);
   const name = createText("p", day.conditions, "weather-name");
   const desc = createText("p", day.description, "weather-desc");
