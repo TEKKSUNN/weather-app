@@ -1,3 +1,4 @@
+import { showLoadingIcon } from "./dom/loading";
 import updateEverything from "./update";
 
 export function processUserLocation(callbackfn) {
@@ -9,6 +10,7 @@ export function processUserLocation(callbackfn) {
 }
 
 export async function changeLocation(...location) {
+  showLoadingIcon();
   if (!location) {
     return;
   }

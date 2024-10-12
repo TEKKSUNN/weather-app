@@ -4,6 +4,7 @@ import createImgFromIcon from "./weather-icons";
 import updateWeatherData from "../weather";
 import { getTabFocused } from "./tabs";
 import getWeatherCardDialog, { getWeatherCardDialogsContainer } from "./weather-cards-dialogs";
+import { hideLoadingIcon } from "./loading";
 
 async function createWeatherCard(day) {
   const container = createDiv("weather-container");
@@ -41,6 +42,7 @@ export async function loadNormalCards() {
   const weatherCardsContainer = await getWeatherCardsDiv();
   clearHTML(weatherCardsContainer);
   appendTo(weatherCardsContainer, ...weatherCards);
+  hideLoadingIcon();
 }
 
 export async function loadAllCards() {
@@ -48,6 +50,7 @@ export async function loadAllCards() {
   const weatherCardsContainer = await getWeatherCardsDiv();
   clearHTML(weatherCardsContainer);
   appendTo(weatherCardsContainer, ...weatherCards);
+  hideLoadingIcon();
 }
 
 export async function updateWeatherCards() {
@@ -57,4 +60,5 @@ export async function updateWeatherCards() {
   } else if (currentTab === "maximum") {
     loadAllCards();
   }
+  hideLoadingIcon();
 }
